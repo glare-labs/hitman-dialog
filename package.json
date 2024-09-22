@@ -1,0 +1,57 @@
+{
+  "name": "@glare-labs/hitman-dialog",
+  "version": "0.0.1",
+  "description": "A hitman style dialog web component, built by lit.",
+  "author": "glare-labs",
+  "license": "MIT",
+  "keywords": [
+    "web-component",
+    "dialog",
+    "ui",
+    "hitman"
+  ],
+  "homepage": "https://github.com/glare-labs//hitman-dialog",
+  "bugs": {
+    "url": "https://github.com/glare-labs/hitman-dialog/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/glare-labs//hitman-dialog.git"
+  },
+  "type": "module",
+  "main": "build/index.esm.js",
+  "module": "build/index.esm.js",
+  "files": [
+    "build/**/*"
+  ],
+  "exports": {
+    ".": {
+      "import": "./build/index.js",
+      "require": "./build/index.js",
+      "types": "./build/index.d.ts",
+      "default": "./build/index.js"
+    },
+    "./*": {
+      "import": "./*.js",
+      "require": "./*.js",
+      "types": "./index.d.ts",
+      "default": "./*.js"
+    }
+  },
+  "types": "build/index.d.ts",
+  "typings": "build/index.d.ts",
+  "scripts": {
+    "compile": "rollup --config"
+  },
+  "workspaces": [
+    "test"
+  ],
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "lit": "^3.2.0",
+    "rollup": "^3.29.5",
+    "tslib": "^2.7.0",
+    "typescript": "^5.6.2"
+  }
+}

@@ -11,10 +11,9 @@
         "moduleResolution": "Bundler",
         
         "noEmit": true,
-        "composite": true,
+        "declaration": true,
         "isolatedModules": true,
         "verbatimModuleSyntax": true,
-        "allowImportingTsExtensions": true,
         "useDefineForClassFields": false,
         "experimentalDecorators": true,
         "allowSyntheticDefaultImports": true,
@@ -22,7 +21,8 @@
         "sourceMap": true,
         "pretty": true,
 
-        "baseUrl": "."
+        "baseUrl": ".",
+        "outDir": "build"
     },
     "include": [
         "src/**/*.ts"
