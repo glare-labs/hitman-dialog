@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+        "target": "ES2022",
+        "module": "ES2022",
+        "lib": [
+            "ES2022",
+            "DOM",
+            "DOM.AsyncIterable",
+            "DOM.Iterable",
+        ],
+        "moduleResolution": "Bundler",
+        
+        "noEmit": true,
+        "composite": true,
+        "isolatedModules": true,
+        "verbatimModuleSyntax": true,
+        "allowImportingTsExtensions": true,
+        "useDefineForClassFields": false,
+        "experimentalDecorators": true,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "sourceMap": true,
+        "pretty": true,
+
+        "baseUrl": "."
+    },
+    "include": [
+        "src/**/*.ts"
+    ],
+    "exclude": [
+
+    ]
+}
