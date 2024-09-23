@@ -1,3 +1,4 @@
+import type { FormSubmitterType } from "internal/form-submitter";
 import { html, LitElement, nothing } from "lit";
 import { property, query, state } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
@@ -40,7 +41,7 @@ export class DialogButton extends LitElement {
     public target: '_blank' | '_parent' | '_self' | '_top' | '' = ''
 
     @property({ reflect: true, attribute: 'type' })
-    public buttonType: 'submit' | 'button' | 'reset' = 'submit'
+    public buttonType: FormSubmitterType = 'submit'
 
     get name() {
         return this.getAttribute('name') ?? ''
@@ -136,7 +137,7 @@ export class DialogButton extends LitElement {
                 class=${classMap(this.classes)}
             >
                 ${this.renderContent()}
-            </button>>
+            </button>
         `
     }
     private renderLink() {

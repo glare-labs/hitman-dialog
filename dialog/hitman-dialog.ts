@@ -51,30 +51,38 @@ export class HitmanAlertDialog extends AlertDialog {
             }
         }
 
+        @layer hitman-dialog-variable {
+            :host {
+                --_container-color: var(--hitman-dialog-container-color, #454545);
+                --_content-color: var(--hitman-dialog-content-color, #c2c2c2);
+                --_scrim-color: var(--hitman-dialog-scrim-color, #000000);
+                --_scrim-opacity: var(--hitman-dialog-scrim-opacity, 0.32);
+
+            }
+        }
+
         @layer hitman-dialog-scrim {
             :host([open="true"]) .scrim {
                 display: block;
             }
 
             .scrim {
-                background: #000000;
+                background: var(--_scrim-color);
+                opacity: var(--_scrim-opacity);
                 display: none;
                 inset: 0;
-                opacity: 0.32;
                 pointer-events: none;
                 position: fixed;
                 z-index: 1;
             }
         }
 
-        @layer hitman-dialog-dialog {
+        @layer hitman-dialog-container {
+
             :host([open="true"]) dialog,
             dialog[open] {
                 display: flex;
             }
-        }
-
-        @layer hitman-dialog-container {
             .container {
                 border-radius: inherit;
                 display: flex;
@@ -91,8 +99,7 @@ export class HitmanAlertDialog extends AlertDialog {
 
         @layer hitman-dialog-header {
             .headline-container {
-                background-color: #ffffff;
-
+                background-color: var(--_container-color);
             }
             .headline {
                 position: relative;
@@ -114,16 +121,43 @@ export class HitmanAlertDialog extends AlertDialog {
 
         @layer hitman-dialog-scroll {
             .scroll-container {
-                background-color: #ffffff;
+                background-color: var(--_container-color);
                 display: flex;
                 flex: 1;
                 flex-direction: column;
                 overflow: hidden;
                 z-index: 1;
             }
+            .content {
+                overflow: auto;
+
+            }
+            /* width */
+            ::-webkit-scrollbar {
+                width: 4px;
+                height: 6px;
+            }
+
+            /* Track */
+            ::-webkit-scrollbar-track {}
+
+            ::-webkit-scrollbar-track:hover {
+                background: transparent;
+            }
+
+            /* Handle */
+            ::-webkit-scrollbar-thumb {
+                background: red;
+            }
+
+            ::-webkit-scrollbar-thumb:hover,
+            ::-webkit-scrollbar-thumb:active {
+                background: red;
+            }
             slot[name='content']::slotted(*) {
                 box-sizing: border-box;
                 padding: 24px 24px;
+                color: var(--_content-color);
             }
         }
 

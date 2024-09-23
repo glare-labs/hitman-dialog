@@ -70,20 +70,20 @@ export class HitmanDialogButton extends DialogButton {
                     --_hitman-dialog-button-height: var(--hitman-dialog-button-height, 48px);
 
                     --_container-color: var(--_variant-container-default-color);
-                    --_variant-container-default-color: var(--hitman-dialog-button-container-default-color, white);
-                    --_variant-container-hover-color: var(--hitman-dialog-button-container-hover-color, lightgray);
+                    --_variant-container-default-color: var(--hitman-dialog-button-container-default-color, #454545);
+                    --_variant-container-hover-color: var(--hitman-dialog-button-container-hover-color, #636363);
                     --_variant-container-focus-color: var(--hitman-dialog-button-container-focus-color, red);
 
 
                     --_label-color: var(--_variant-label-default-color);
-                    --_variant-label-default-color: var(--hitman-dialog-button-label-default-color, black);
-                    --_variant-label-hover-color: var(--hitman-dialog-button-label-hover-color, black);
+                    --_variant-label-default-color: var(--hitman-dialog-button-label-default-color, white);
+                    --_variant-label-hover-color: var(--hitman-dialog-button-label-hover-color, white);
                     --_variant-label-focus-color: var(--hitman-dialog-button-label-focus-color, white);
                     --_label-font-size: var(--hitman-dialog-button-label-font-size, 16px);
 
                     --_icon-color: var(--_variant-icon-default-color);
-                    --_variant-icon-default-color: var(--hitman-dialog-button-icon-default-color, black);
-                    --_variant-icon-hover-color: var(--hitman-dialog-button-icon-hover-color, black);
+                    --_variant-icon-default-color: var(--hitman-dialog-button-icon-default-color, white);
+                    --_variant-icon-hover-color: var(--hitman-dialog-button-icon-hover-color, white);
                     --_variant-icon-focus-color: var(--hitman-dialog-button-icon-focus-color, white);
                     --_icon-size: var(--hitman-dialog-button-icon-size, 24px);
                     --_icon-padding-start: var(--hitman-dialog-button-icon-padding-start, 16px);
