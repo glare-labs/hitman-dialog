@@ -1,0 +1,13 @@
+{
+  "name": "dev-app",
+  "private": "true",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.2",
+    "vite": "^5.4.7"
+  }
+}
