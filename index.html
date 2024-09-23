@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <script type="module" crossorigin src="/assets/index-bN8t9g0I.js"></script>
+</head>
+<body>
+    
+    <header class="page-title">Dev App</header>
+
+    <main class="page-content">
+        <button class="open-dialog dialog-toggle-button">Open Dialog</button>
+
+        <hitman-alert-dialog class="d" open>
+            <hitman-dialog-header slot="headline">PROGRESSION CARRY OVER</hitman-dialog-header>
+            <form id="ff" slot="content" method="dialog">
+                DESCRIPTION Text DESCRIPTION Text DESCRIPTION Text DESCRIPTION Text DESCRIPTION Text DESCRIPTION Text DESCRIPTION Text DESCRIPTION Text DESCRIPTION Text DESCRIPTION Text.
+
+                DESCRIPTION Text DESCRIPTION Text DESCRIPTION Text DESCRIPTION Text DESCRIPTION Text DESCRIPTION Text DESCRIPTION Text.
+            </form>
+            <div slot="actions">
+                <hitman-dialog-button form="ff" value="CANCEL">
+                    <span slot="leading-icon">
+                        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+                        <span class="material-symbols-outlined">check</span>
+                    </span>
+                    Cancel
+                </hitman-dialog-button>
+                <hitman-dialog-button form="ff" value="APPLY">
+                    <span slot="leading-icon">
+                        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+                        <span class="material-symbols-outlined">close</span>
+                    </span>
+                    Apply
+                    <span slot="trailing-icon">
+                        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+                        <span class="material-symbols-outlined">open_in_new</span>
+                    </span>
+                </hitman-dialog-button>
+                <hitman-dialog-button form="ff" value="APPLY" type="button" href="127.0.0.1:5173" target="_blank">
+                    <span slot="leading-icon">
+                        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+                        <span class="material-symbols-outlined">close</span>
+                    </span>
+                    LINK
+                    <span slot="trailing-icon">
+                        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+                        <span class="material-symbols-outlined">open_in_new</span>
+                    </span>
+                </hitman-dialog-button>
+            </div>
+        </hitman-alert-dialog>
+    </main>
+
+
+
+    <script>
+        setTimeout(() => {
+            const openButton = document.querySelector('.open-dialog')
+            const dialog = document.querySelector('.d')
+
+            openButton.addEventListener('click', () => {
+                dialog.show()
+            })
+
+            dialog.addEventListener('open', () => console.log('Dialog open'))
+            dialog.addEventListener('opened', () => console.log('Dialog opened'))
+            dialog.addEventListener('close', () => console.log('Dialog close'))
+            dialog.addEventListener('closed', () => console.log('Dialog closed'))
+            dialog.addEventListener('cancel', (e) => console.log('Dialog cancel', e))
+            dialog.addEventListener('submit', (e) => console.log('Dialog submit', e))
+        }, 500)
+    </script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .page-title {
+            font-weight: 700;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            background-color: transparent;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.25  );
+            padding: 12px 16px;
+            margin: 0;
+        }
+
+        .page-content {
+            display: block;
+            padding: 16px;
+        }
+        .dialog-toggle-button {
+            all: none;
+            display: inline-flex;
+            outline: none;
+            border: none;
+            height: 40px;
+            align-items: center;
+            padding-left: 16px;
+            padding-right: 16px;
+            background-color: lightblue;
+            color: darkblue;
+        }
+        .dialog-toggle-button:hover {
+            box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.25);
+        }
+        .dialog-toggle-button:hover:active,
+        .dialog-toggle-button:focus {
+            outline: 2px solid red;
+        }
+    </style>
+</body>
+</html>
