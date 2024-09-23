@@ -9,25 +9,38 @@
             "DOM.Iterable",
         ],
         "moduleResolution": "Bundler",
-        
+        "composite": true,
         "noEmit": true,
         "declaration": true,
+        "declarationMap": true,
+        "downlevelIteration": true,
+        "importHelpers": true,
         "isolatedModules": true,
         "verbatimModuleSyntax": true,
         "useDefineForClassFields": false,
         "experimentalDecorators": true,
         "allowSyntheticDefaultImports": true,
         "strict": true,
+        "strictNullChecks": true,
         "sourceMap": true,
+        "inlineSources": true,
         "pretty": true,
-
         "baseUrl": ".",
-        "outDir": "build"
+        "outDir": "build",
+        "types": ["lit"]
     },
     "include": [
-        "src/**/*.ts"
+        "dialog/**/*.ts",
+        "dialog-button/**/*.ts",
+        "dialog-header/**/*.ts",
+        "internal/**/*.ts",
+        "index.ts"
     ],
     "exclude": [
-
+        "test/**/*",
+        ".vscode/***/*",
+        ".rollup.cache/**/*",
+        "build/**/*",
+        "node_modules"
     ]
 }

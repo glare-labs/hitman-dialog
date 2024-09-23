@@ -19,8 +19,8 @@
     "url": "git+https://github.com/glare-labs//hitman-dialog.git"
   },
   "type": "module",
-  "main": "build/index.esm.js",
-  "module": "build/index.esm.js",
+  "main": "build/index.js",
+  "module": "build/index.js",
   "files": [
     "build/**/*"
   ],
@@ -36,22 +36,58 @@
       "require": "./*.js",
       "types": "./index.d.ts",
       "default": "./*.js"
+    },
+    "./hitman-dialog": {
+      "import": "./*.js",
+      "require": "./*.js",
+      "types": "./dialog/hitman-dialog.d.ts",
+      "default": "./*.js"
+    },
+    "./hitman-dialog-button": {
+      "import": "./*.js",
+      "require": "./*.js",
+      "types": "./dialog-button/hitman-dialog-button.d.ts",
+      "default": "./*.js"
     }
   },
   "types": "build/index.d.ts",
   "typings": "build/index.d.ts",
   "scripts": {
-    "compile": "rollup --config"
+    "compile": "wireit",
+    "dev": "wireit",
+    "build-dev-app": "wireit"
   },
   "workspaces": [
-    "test"
+    "dev-app"
   ],
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.6",
     "lit": "^3.2.0",
     "rollup": "^3.29.5",
     "tslib": "^2.7.0",
-    "typescript": "^5.6.2"
+    "typescript": "^5.6.2",
+    "wireit": "^0.14.9"
+  },
+  "wireit": {
+    "compile": {
+      "command": "npx rollup --config",
+      "output": [
+        "build/**/*"
+      ],
+      "files": [
+        "dialog/**/*",
+        "dialog-header/**/*",
+        "dialog-button/**/*",
+        "internal/**/*"
+      ]
+    },
+    "dev": {
+      "command": "npm run dev -w dev-app"
+    },
+    "build-dev-app": {
+      "command": "npm run build -w dev-app"
+    }
   }
 }
